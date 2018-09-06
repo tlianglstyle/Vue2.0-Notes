@@ -1,3 +1,4 @@
+```
 function watcher(opts){
     var that = this
     this.data = opts.data
@@ -45,3 +46,4 @@ console.log(vm.a)
 // newVal1:4
 // oldVal1:2
 //3
+```
