@@ -1,1 +1,1 @@
-# Vue2.0-Notes
+# Vue2.0 for Webpack
