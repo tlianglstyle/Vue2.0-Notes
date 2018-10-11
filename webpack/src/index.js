@@ -6,7 +6,7 @@ import print from'./print'
 function component() {
     var element = document.createElement('div');
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.innerHTML = _.join(['Hello', 'webpa11ck'], ' ');
     element.classList.add('hello')
     
     var myIcon = new Image();
