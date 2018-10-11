@@ -1,14 +1,15 @@
 const path = require('path')
-var HelloWorldPlugin = require('./hello-world');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+const HelloWorldPlugin = require('./hello-world');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
   //entry: './src/index.js',
   entry: {
     app: './src/index.js',
-    print: './src/print.js'
+    //print: './src/print.js'
   },
   output: {
     //filename: 'bundle.js',
@@ -36,10 +37,13 @@ module.exports = {
       new CleanWebpackPlugin(['dist']),
       new CopyWebpackPlugin([{ from: 'src', to: 'copy' }]),
       new HtmlWebpackPlugin({ title: 'Output Management'}),
-      new HelloWorldPlugin({options:true})
+      new HelloWorldPlugin({options:true}),
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin()
 
    ],
    devServer: {
-      contentBase: './dist'
+      contentBase: './dist',
+      hot:true
    }
 };
